@@ -20,7 +20,7 @@ var wantsSpecialCharacters = true;
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function generatePassword() {
+function writePassword() {
   if (wantsLowercase) {
     characterSet = characterSet.concat(lowercaseLetters) //changes value of characterSet
 }
@@ -45,7 +45,7 @@ for (var count = 0; count < passwordLength; count++) {
 return password;
 }
 
-  var password = generatePassword();
+  var password = writePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -55,6 +55,6 @@ return password;
 // Add event listener to generate button
 generateBtn.addEventListener("click", function() {
   password = '';
-  generatePassword();
+  writePassword();
   passwordText.value = password;
 });
